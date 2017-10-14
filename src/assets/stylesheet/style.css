@@ -1,0 +1,44 @@
+@import "normalize.css";
+
+/*
+Estilo padrão para os demais componentes
+*/
+label {
+	font-weight: bold;
+}
+
+/* Classe utilizada nos containers */
+.gap, .gap-right, .gap-left { margin-bottom: -15px !important; }
+.gap, .gap-right { padding-right: 2px !important; }
+.gap, .gap-left { padding-left: 2px !important; }
+
+@media only screen and (max-width: 768px){
+	[class*="gap"] {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+}
+
+.well {
+	background-color: #fff
+}
+
+.nav-color {
+	background-color: #00b7bd;
+	border-color: #00abb2;
+}
+
+.nav-color .navbar-brand,
+.nav-color .navbar-nav > li > a,
+.nav-color .navbar-nav > .active > a {
+	color: #fff;
+}
+
+.nav-color .navbar-brand:hover,
+.nav-color .navbar-brand:focus,
+.nav-color .navbar-nav > li > a:hover,
+.nav-color .navbar-nav > li > a:focus,
+.nav-color .navbar-nav > .active > a:hover,
+.nav-color .navbar-nav > .active > a:focus{
+	color: #f1f1f1;
+}
