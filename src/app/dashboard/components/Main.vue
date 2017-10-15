@@ -1,9 +1,7 @@
 <script>
 import { mapState, mapActions } from 'vuex'
-import filters from './filters'
-import countries from './charts/countries'
-import languages from './charts/languages'
 import monitor from './charts/MonitorFC'
+import monitor2 from './charts/MonitorFR'
 import paciente from './paciente'
 
 export default {
@@ -15,14 +13,15 @@ export default {
   mounted () {
     this.setDados()
     this.setPaciente()
+    this.setGasometria()
   },
   methods: {
-    ...mapActions(['setDados', 'setPaciente']),
+    ...mapActions(['setDados', 'setPaciente', 'setGasometria']),
     getRandomRange (min, max) {
       return Math.random() * (max - min + 1) + min
     }
   },
-  components: { filters, countries, languages, monitor, paciente }
+  components: { monitor, monitor2, paciente }
 }
 </script>
 
@@ -39,13 +38,15 @@ export default {
       </div>
       <div class="col-sm-3 gap">
         <div class="well">
+          <div class="box-header">Parâmetros</div>
           <fieldset>
-            <legend>Historico</legend>
+            <legend>Parâmetros</legend>
           </fieldset>
         </div>
       </div>
       <div class="col-sm-3 gap-left">
         <div class="well">
+          <div class="box-header">Tomada de decisão</div>
           <fieldset>
             <legend>Tomada de Decisão</legend>
           </fieldset>
@@ -56,25 +57,21 @@ export default {
     <div class="row">
       <div class="col-sm-6 gap-right">
         <div class="well">
-          <fieldset>
-            <legend>Monitores</legend>
-            <monitor/>
-          </fieldset>
+          <div class="box-header">Monitores</div>
+          <monitor/>
+          <monitor2/>
         </div>
       </div>
       <div class="col-sm-3 gap">
         <div class="well">
+          <div class="box-header">Gasometria</div>
           <fieldset>
             <legend>Gasometria</legend>
           </fieldset>
         </div>
       </div>
       <div class="col-sm-3 gap-left">
-        <div class="well">
-          <fieldset>
-            <legend>Parâmetros</legend>
-          </fieldset>
-        </div>
+
       </div>
     </div>
   </div>

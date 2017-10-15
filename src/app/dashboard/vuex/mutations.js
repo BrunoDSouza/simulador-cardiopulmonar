@@ -9,5 +9,8 @@ export default {
   },
   [mutations.setPaciente] (state, paciente) {
     state.paciente = paciente
+  },
+  [mutations.setGasometria] (state, gasometria) {
+    state.gasometria = gasometria
   }
 }

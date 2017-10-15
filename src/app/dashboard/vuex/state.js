@@ -1,5 +1,6 @@
 export default {
   list: [],
   filter: '',
-  paciente: {}
+  paciente: {},
+  gasometria: {}
 }

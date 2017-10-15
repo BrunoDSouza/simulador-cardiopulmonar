@@ -1,0 +1,12 @@
+{
+  "dados": [
+      { "param": "pH", "value": 7.39, "description": null },
+      { "param": "PaCO2", "value": 40, "description": null },
+      { "param": "HCO3", "value": 23, "description": null },
+      { "param": "BE", "value": 0, "description": null },
+      { "param": "PaO2", "value": 85, "description": null },
+      { "param": "FiO2", "value": 0.21, "description": null },
+      { "param": "PaO2/FIO2", "value": 406, "description": null },
+      { "param": "SaO2", "value": 96, "description": null }
+  ]
+}

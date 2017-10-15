@@ -19,7 +19,7 @@ export default {
     setUp () {
       Highcharts.setOptions(Dark)
 
-      Highcharts.chart('container-monitor2', {
+      Highcharts.chart('container-monitor', {
         chart: {
           type: 'spline',
           animation: Highcharts.svg, // don't animate in old IE
@@ -97,7 +97,7 @@ export default {
   <div>
     <fieldset>
       <legend class="legend">Frequência cardiaca</legend>
-      <div id="container-monitor2" style="width=100%; height:150px;"></div>
+      <div id="container-monitor" style="width=100%; height:150px;"></div>
     </fieldset>
   </div>
 
