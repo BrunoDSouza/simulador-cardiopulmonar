@@ -6,5 +6,8 @@ export default {
   },
   [mutations.setFilter] (state, filter) {
     state.filter = filter
+  },
+  [mutations.setPaciente] (state, paciente) {
+    state.paciente = paciente
   }
 }

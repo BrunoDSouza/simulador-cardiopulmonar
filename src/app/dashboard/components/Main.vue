@@ -4,6 +4,7 @@ import filters from './filters'
 import countries from './charts/countries'
 import languages from './charts/languages'
 import monitor from './charts/MonitorFC'
+import paciente from './paciente'
 
 export default {
   computed: {
@@ -13,14 +14,15 @@ export default {
   },
   mounted () {
     this.setDados()
+    this.setPaciente()
   },
   methods: {
-    ...mapActions(['setDados']),
+    ...mapActions(['setDados', 'setPaciente']),
     getRandomRange (min, max) {
       return Math.random() * (max - min + 1) + min
     }
   },
-  components: { filters, countries, languages, monitor }
+  components: { filters, countries, languages, monitor, paciente }
 }
 </script>
 
@@ -31,61 +33,7 @@ export default {
           <div class="well">
             <div class="box-header">Paciente</div>
             <div class="row">
-              <div class="col-sm-4">
-                <fieldset>
-                  <legend class="legend">Dados gerais</legend>
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      Idade <span class="badge">22</span>
-                    </li>
-                    <li class="list-group-item">
-                      Peso <span class="badge">77kg</span>
-                    </li>
-                    <li class="list-group-item">
-                      Altura <span class="badge">1.70m</span>
-                    </li>
-                    <li class="list-group-item">
-                      <span v-tooltip="'Heyyy'">IMC</span>
-                      <span class="badge">22.5</span>
-                    </li>
-                  </ul>
-                </fieldset>
-              </div>
-              <div class="col-sm-4">
-                <fieldset>
-                  <legend class="legend">Fisiologia Pulmonar</legend>
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      Rva (cmH2O/l/s) <span class="badge">2</span>
-                    </li>
-                    <li class="list-group-item">
-                      Cst (ml/cmH2O) <span class="badge">140</span>
-                    </li>
-                    <li class="list-group-item">
-                      VD/VT <span class="badge">0.30</span>
-                    </li>
-                    <li class="list-group-item">
-                      Shunt (%) <span class="badge">1</span>
-                    </li>
-                  </ul>
-                </fieldset>
-              </div>
-              <div class="col-sm-4">
-                <fieldset>
-                  <legend class="legend">Esforça Muscular</legend>
-                  <ul class="list-group">
-                    <li class="list-group-item">
-                      Pmus (cmH2O) <span class="badge">22</span>
-                    </li>
-                    <li class="list-group-item">
-                      f (rpm) <span class="badge">77kg</span>
-                    </li>
-                    <li class="list-group-item">
-                      Duração (s) <span class="badge">1.70m</span>
-                    </li>
-                  </ul>
-                </fieldset>
-              </div>
+              <paciente/>
             </div>
           </div>
       </div>

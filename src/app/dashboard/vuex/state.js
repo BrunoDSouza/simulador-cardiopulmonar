@@ -1,4 +1,5 @@
 export default {
   list: [],
-  filter: ''
+  filter: '',
+  paciente: {}
 }
