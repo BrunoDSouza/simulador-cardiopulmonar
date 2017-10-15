@@ -3,6 +3,7 @@ import { mapState, mapActions } from 'vuex'
 import monitor from './charts/MonitorFC'
 import monitor2 from './charts/MonitorFR'
 import paciente from './paciente'
+import gasometria from './gasometria'
 
 export default {
   computed: {
@@ -21,7 +22,7 @@ export default {
       return Math.random() * (max - min + 1) + min
     }
   },
-  components: { monitor, monitor2, paciente }
+  components: { monitor, monitor2, paciente, gasometria }
 }
 </script>
 
@@ -30,8 +31,8 @@ export default {
     <div class="row">
       <div class="col-sm-6 gap-right">
           <div class="well">
-            <div class="box-header">Paciente</div>
             <div class="row">
+              <div class="box-header">Paciente</div>
               <paciente/>
             </div>
           </div>
@@ -57,17 +58,20 @@ export default {
     <div class="row">
       <div class="col-sm-6 gap-right">
         <div class="well">
-          <div class="box-header">Monitores</div>
-          <monitor/>
-          <monitor2/>
+          <div class="row">
+            <div class="box-header">Monitores</div>
+            <monitor/>
+            <monitor2/>
+          </div>
+
         </div>
       </div>
       <div class="col-sm-3 gap">
         <div class="well">
-          <div class="box-header">Gasometria</div>
-          <fieldset>
-            <legend>Gasometria</legend>
-          </fieldset>
+          <div class="row">
+            <div class="box-header">Gasometria</div>
+            <gasometria/>
+          </div>
         </div>
       </div>
       <div class="col-sm-3 gap-left">

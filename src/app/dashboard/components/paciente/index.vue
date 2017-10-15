@@ -4,7 +4,7 @@ import { mapState } from 'vuex'
 export default {
   computed: {
     ...mapState({
-      paciente: state => state.dashboard.paciente.dados
+      paciente: state => state.dashboard.paciente
     })
   }
 }
@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div>
-    <div class="col-sm-4 gap-right" v-for="item in paciente">
+    <div class="col-sm-4 gap" v-for="item in paciente.dados">
       <fieldset>
         <legend class="legend">{{ item.name }}</legend>
         <ul class="list-group box-list">
