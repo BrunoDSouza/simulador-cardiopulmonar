@@ -1,13 +1,16 @@
 @import "normalize.css";
-
 /*
 Estilo padrão para os demais componentes
 */
 label {
 	font-weight: bold;
 }
+.well {
+	background-color: #fff
+}
 
 /* Classe utilizada nos containers */
+/* Definir bordar e padding entre os wells*/
 .gap, .gap-right, .gap-left { margin-bottom: -15px !important; }
 .gap, .gap-right { padding-right: 2px !important; }
 .gap, .gap-left { padding-left: 2px !important; }
@@ -19,15 +22,12 @@ label {
 	}
 }
 
-.well {
-	background-color: #fff
-}
 
+/* Estilização do menu principal*/
 .nav-color {
 	background-color: #00b7bd;
 	border-color: #00abb2;
 }
-
 .nav-color .navbar-brand,
 .nav-color .navbar-nav > li > a,
 .nav-color .navbar-nav > .active > a {
@@ -41,4 +41,16 @@ label {
 .nav-color .navbar-nav > .active > a:hover,
 .nav-color .navbar-nav > .active > a:focus{
 	color: #f1f1f1;
+}
+
+/*Estilização dos box's onde conteram as informações do paciente*/
+.legend {
+	font-size: 15px;
+}
+
+.box-header{
+	padding-bottom: 10px;
+  padding-left: 11px;
+  font-weight: bold;
+  font-size: 18px;
 }
