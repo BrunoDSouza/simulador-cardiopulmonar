@@ -1,0 +1,24 @@
+{
+  "dados": [
+    {
+      "name": "Ventilometria",
+      "data": [
+        { "param": "VCi (ml)", "value": 500, "description": null },
+        { "param": "VCe (ml)", "value": 500, "description": null },
+        { "param": "VCi (ml/Kg)", "value": 6.70, "description": null },
+        { "param": "VCe (ml/Kg)", "value": 7.5, "description": null },
+        { "param": "f (rpm)", "value": 13, "description": null },
+        { "param": "VE (l/min)", "value": 7.70, "description": null }
+      ]
+    },
+    {
+      "name": "Sincronia",
+      "data": [
+        { "param": "T. Insp (s)", "value": 0.50, "description": null },
+        { "param": "T. Exp (s)", "value": 3.79, "description": null },
+        { "param": "TTOT (s)", "value": 4.29, "description": null },
+        { "param": "I:E", "value": "1 : 7.57", "description": null }
+      ]
+    }
+  ]
+}

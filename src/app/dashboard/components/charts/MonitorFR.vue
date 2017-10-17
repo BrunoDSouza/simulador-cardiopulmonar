@@ -96,8 +96,8 @@ export default {
 <template>
   <div>
     <fieldset>
-      <legend class="legend">Frequência cardiaca</legend>
-      <div id="container-monitor" style="width=100%; height:150px;"></div>
+      <legend class="legend">Frequência respiratória</legend>
+      <div id="container-monitor" class="box-single" style="width=100%; height:150px;"></div>
     </fieldset>
   </div>
 

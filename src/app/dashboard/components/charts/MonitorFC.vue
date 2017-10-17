@@ -97,7 +97,7 @@ export default {
   <div>
     <fieldset>
       <legend class="legend">Frequência cardiaca</legend>
-      <div id="container-monitor2" style="width=100%; height:150px;"></div>
+      <div id="container-monitor2" class="box-single" style="width=100%; height:150px;"></div>
     </fieldset>
   </div>
 

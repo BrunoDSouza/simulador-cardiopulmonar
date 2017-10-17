@@ -1,0 +1,13 @@
+{
+  "dados": [
+      { "param": "Volume (ml)", "value": 500, "description": null },
+      { "param": "f (rpm)", "value": 14, "description": null },
+      { "param": "Fluxo (l/min)", "value": 60, "description": null },
+      { "param": "T. Insp. (s)", "value": 0.50, "description": null },
+      { "param": "PEEP (cmH2O)", "value": 5, "description": null },
+      { "param": "FIO2 (%)", "value": 21, "description": null },
+      { "param": "Pausa Insp. (s)", "value": 0, "description": null },
+      { "param": "Pausa Exp. (s)", "value": 0, "description": null },
+      { "param": "Sensibilidade", "value": 2, "description": null }
+  ]
+}

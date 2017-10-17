@@ -12,5 +12,11 @@ export default {
   },
   [mutations.setGasometria] (state, gasometria) {
     state.gasometria = gasometria
+  },
+  [mutations.setParametros] (state, parametros) {
+    state.parametros = parametros
+  },
+  [mutations.setVentilador] (state, ventilador) {
+    state.ventilador = ventilador
   }
 }

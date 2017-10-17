@@ -1,0 +1,80 @@
+/*Estilização para menu principal acordeon */
+ul li{
+	padding-left: 0;
+}
+
+li:first-child > a,
+li:first-child > label {
+  border-top: none;
+}
+
+li:last-child > a,
+li:last-child > label {
+ border-bottom: none;
+}
+
+ul.accordion{
+  margin-left: -45px;
+}
+
+li.item-accordion{
+  list-style: none;
+	margin-bottom: -19px;
+}
+.item-accordion > label{
+	padding: 10px;
+	width: 100%;
+	background-color: #5dc2c7;
+	cursor: pointer;
+	color: #fff;
+	display: block;
+	margin-bottom: 0px;
+	padding-left: 15px;
+}
+
+.item-accordion label:hover{
+	background-color: #64adb0;
+}
+
+.item-accordion ul{
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+	max-height: 0;
+	border-left: none;
+	transition: all .6s cubic-bezier(.46,.03,.52,.96);
+}
+
+.item-accordion ul li a{
+	width: 100%;
+	height: auto;
+	padding: 10px;
+	padding-left: 35px;
+	display: block;
+	text-decoration: none;
+	background-color: #fafafa;
+	color: #549aba;
+	border-left: 3px solid;
+	border-left-color: #1e94d2;
+}
+
+.item-accordion ul li a:hover{
+	background-color: #1e94d2;
+	color: #fff;
+	/*margin-left: 8px;*/
+	transition: all .3s ease-out;
+}
+
+.item-accordion input:checked ~ ul{
+	background: #1e94d2;
+	height: auto;
+	max-height: 200px;
+
+}
+
+.item-accordion input[type=checkbox]{
+	display: none;
+	transform: all;
+}
+
+/*Fim Estilização do menu accordion*/

@@ -2,5 +2,7 @@ export default {
   list: [],
   filter: '',
   paciente: {},
-  gasometria: {}
+  gasometria: {},
+  parametros: {},
+  ventilador: {}
 }

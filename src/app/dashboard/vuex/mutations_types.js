@@ -1,4 +1,6 @@
 export const setList = 'dashboard/setList'
 export const setPaciente = 'dashboard/setPaciente'
 export const setGasometria = 'dashboard/setGasometria'
+export const setParametros = 'dashboard/setParametros'
+export const setVentilador = 'dashboard/setVentilador'
 export const setFilter = 'dashboard/setFilter'
