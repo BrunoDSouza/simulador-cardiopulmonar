@@ -17,7 +17,7 @@ export default {
           <ul class="list-group">
             <li class="list-group-item" v-for="item in gasometria.dados">
               <span v-tooltip="item.description">{{ item.param }}</span>
-              <span class="badge">{{ item.value }}</span>
+              <span class="badge badge-warning">{{ item.value }}</span>
             </li>
           </ul>
       </div>

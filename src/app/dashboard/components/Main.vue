@@ -1,6 +1,5 @@
 <script>
 import { mapState, mapActions } from 'vuex'
-import vueSlider from 'vue-slider-component'
 import { uniformHeight } from '../services'
 import monitorFC from './charts/MonitorFC'
 import monitorFR from './charts/MonitorFR'
@@ -9,13 +8,9 @@ import paciente from './paciente'
 import gasometria from './gasometria'
 import parametros from './parametros'
 import ventilador from './ventilador'
+import cateterOxigenio from './cateterOxigenio'
 
 export default {
-  data () {
-    return {
-      value: 3
-    }
-  },
   computed: {
     ...mapState({
       user: state => state.auth.user
@@ -40,7 +35,7 @@ export default {
     }
   },
   components: {
-    monitorFC, monitorFR, paciente, gasometria, parametros, ventilador, vueSlider, ventilacao
+    monitorFC, monitorFR, paciente, gasometria, parametros, ventilador, ventilacao, cateterOxigenio
   }
 }
 </script>
@@ -76,11 +71,7 @@ export default {
           </div>
           <div class="row">
             <div class="col-sm-12 gap">
-              <fieldset>
-                <legend class="legend">Cateter nasal de O²</legend>
-                <vue-slider class="box-list" v-model="value" :lazy="true" :interval="20" :max="100" :dotSize="20"
-                :piecewise="true" :tooltip="'hover'" :formatter="'{value}(L/min)'"/>
-              </fieldset>
+              <cateterOxigenio/>
             </div>
           </div>
         </div>

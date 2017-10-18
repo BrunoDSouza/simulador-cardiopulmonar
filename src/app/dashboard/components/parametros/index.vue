@@ -19,7 +19,7 @@ export default {
         <ul class="list-group">
           <li class="list-group-item" v-for="item_last in item.data">
             <span v-tooltip=""> {{ item_last.param}} </span>
-            <span class="badge">{{ item_last.value }}</span>
+            <span class="badge badge-info">{{ item_last.value }}</span>
           </li>
         </ul>
       </li>

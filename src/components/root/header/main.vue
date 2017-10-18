@@ -4,7 +4,7 @@
   import Right from './right'
 
   export default {
-    name: 'confee-header',
+    name: 'monitor-menu',
     components: { Left, Brand, Right },
     data () {
       return {
