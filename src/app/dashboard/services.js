@@ -9,3 +9,25 @@ export const getPaciente = () => paciente
 export const getGasometria = () => gasometria
 export const getParametros = () => parametros
 export const getVentilador = () => ventilador
+
+export const uniformHeight = (collection, selector) => {
+  collection.forEach((item) => {
+    let list = item.querySelectorAll(selector)
+    let max = getMaxHeight(list)
+    setHeight(list, max)
+  })
+}
+
+const setHeight = (list, height) => {
+  list.forEach((item) => {
+    item.style.minHeight = `${height}px`
+  })
+}
+
+const getMaxHeight = (collection) => {
+  let maxHeight = 0
+  collection.forEach((item) => {
+    maxHeight = Math.max(maxHeight, item.offsetHeight)
+  })
+  return maxHeight
+}

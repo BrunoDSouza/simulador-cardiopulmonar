@@ -2,18 +2,12 @@
 import { mapActions } from 'vuex'
 import Highcharts from 'highcharts'
 import Dark from './themes/dark'
-// import _ from 'lodash'
 import base from './abstractChart'
 export default {
   extends: base,
   methods: {
     ...mapActions(['setDados']),
     dataSource () {
-      // this.chart === null ? (
-      //   this.chart = this.setUp({ categories, values })
-      // ) : (
-      //   this.chart.series[0].setData(values)
-      // )
       this.setUp()
     },
     setUp () {
