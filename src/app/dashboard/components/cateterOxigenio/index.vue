@@ -4,7 +4,7 @@ import vueSlider from 'vue-slider-component'
 export default {
   data () {
     return {
-      value: 3
+      value: 54
     }
   },
   components: { vueSlider }
