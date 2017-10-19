@@ -106,5 +106,11 @@ export default {
         </div>
       </div>
     </div>
+    <audio autoplay loop preload="auto" style=" width:300px;">
+      <source src="static/songs/beat-cardio.mp3" type="audio/mpeg">
+    </audio>
+    <audio autoplay loop preload="auto" style=" width:300px;">
+      <source src="static/songs/heartbeat.mp3" type="audio/mpeg">
+    </audio>
   </div>
 </template>
