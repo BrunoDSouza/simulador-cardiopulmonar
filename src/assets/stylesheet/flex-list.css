@@ -15,3 +15,7 @@
 	padding: 2em;
 	width: 100%;
 }
+
+.list-content div.botton {
+	flex: 1 0 auto;
+}

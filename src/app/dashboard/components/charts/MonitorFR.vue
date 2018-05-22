@@ -30,7 +30,7 @@ export default {
                 let x = new Date().getTime()
                 let y = Math.random() * (90 - 88 + 1) + 88
                 fc.addPoint([x, y], true, true)
-              }, 530)
+              }, 1000)
             }
           }
         },

@@ -67,7 +67,7 @@ export default {
         credits: { enabled: false },
         series: [{
           name: 'FC',
-          marker: { enabled: true },
+          marker: { enabled: false },
           data: (function () {
             var data = []
             let i

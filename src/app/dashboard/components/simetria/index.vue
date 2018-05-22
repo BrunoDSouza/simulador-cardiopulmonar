@@ -12,8 +12,7 @@ export default {
 
 <template>
   <div>
-    <div class="row" v-for="item in simetria.dados">
-      <div class="col-sm-10 gap">
+      <div class="col-sm-6 gap" v-for="item in simetria.dados">
         <fieldset>
           <legend class="legend">{{ item.name }}</legend>
           <ul class="list-group box-list">
@@ -22,8 +21,7 @@ export default {
               <span class="badge">{{ item_list.value }}</span>
             </li>
           </ul>
-        </fieldset>
-      </div>  
+        </fieldset>  
     </div>
   </div>
 </template>

@@ -16,12 +16,12 @@ export default {
       var gaugeOptions = {
         chart: {
           type: 'solidgauge',
-          height: 120
+          height: 150
         },
         title: '',
         pane: {
-          center: ['50%', '90%'],
-          size: '170%',
+          center: ['50%', '95%'],
+          size: '190%',
           startAngle: -90,
           endAngle: 90,
           background: {

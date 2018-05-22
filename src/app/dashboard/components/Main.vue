@@ -1,7 +1,8 @@
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex'
-import { uniformHeight, convertToObject, compareObject } from '../services'
+import { convertToObject, compareObject } from '../services'
 import swal from 'sweetalert'
+import Stomp from 'webstomp-client'
 import monitorFC from './charts/MonitorFC'
 import monitorFR from './charts/MonitorFR'
 import oximetria from './charts/oximetria'
@@ -19,7 +20,8 @@ export default {
       count: {procedimentos: 0, ventilador: 0, cateter: 0},
       procedimentos: {},
       ventilador: {},
-      cateter: {}
+      cateter: {},
+      stomp: {}
     }
   },
   computed: {
@@ -42,18 +44,13 @@ export default {
     this.setSimetria()
     this.setVentilador()
     this.setProcedimentos()
-    this.procedimentos = convertToObject(this.procedimentosStore)
-    this.ventilador = convertToObject(this.ventiladorStore)
-    this.cateter = convertToObject(this.cateterStore)
+    this.initStore()
+    this.connect()
   },
   methods: {
     ...mapActions(['setDados', 'setPaciente', 'setGasometria', 'setSimetria', 'setVentilador', 'setProcedimentos']),
     getRandomRange (min, max) {
       return Math.random() * (max - min + 1) + min
-    },
-    setUniformHeight () {
-      const collection = document.querySelectorAll('div.root>div.row')
-      uniformHeight(collection, 'div.well')
     },
     confirmAction () {
       swal({
@@ -62,8 +59,10 @@ export default {
         buttons: true,
         dangerMode: false
       })
-      .then((willDelete) => {
-        if (willDelete) {
+      .then((confirm) => {
+        if (confirm) {
+          this.initStore()
+          this.resetCounter()
           swal('As procedimentos foram aplicados!', {
             icon: 'success',
             buttons: false,
@@ -72,12 +71,42 @@ export default {
         }
       })
     },
+    initStore () {
+      this.procedimentos = convertToObject(this.procedimentosStore)
+      this.ventilador = convertToObject(this.ventiladorStore)
+      this.cateter = convertToObject(this.cateterStore)
+    },
+    resetCounter () {
+      this.count.procedimentos = 0
+      this.count.ventilador = 0
+      this.count.cateter = 0
+    },
     compareOject (value, oldValue) {
       if (!compareObject(value, oldValue) && this.count <= 0) {
         this.count++
       } else if (compareObject(value, oldValue) && this.count > 0) {
         this.count--
       }
+    },
+    connect () {
+      var url = 'ws://localhost:8080/ws'
+      this.stomp = Stomp.client(url)
+      this.stomp.debug = () => {}
+      this.stomp.connect({}, this.onConnected, this.onError)
+    },
+    send () {
+      // Add state vuex here
+      var object = {}
+      this.stomp.send('/app/simulator.action', JSON.stringify(object), {})
+    },
+    onConnected () {
+      this.stomp.subscribe('/topic/public', this.onMessageReceived)
+    },
+    onError () {
+      // TODO
+    },
+    onMessageReceived (payload) {
+      console.log(payload.body)
     }
   },
   components: {
@@ -141,20 +170,20 @@ export default {
               <div class="box-header">Paciente</div>
               <paciente/>
             </div>
+            <div class="row">
+                <simetria/>
+            </div>
           </div>
       </div>
       <div class="col-sm-4 gap-left list-item">
         <div class="well list-content">
           <div class="row">
             <div class="box-header">Ventilação</div>
-            <div class="col-sm-6 gap">
+            <div class="col-sm-12 gap">
               <oximetria/>
             </div>
-            <div class="col-sm-6 gap">
-              <simetria/>
-            </div>
           </div>
-          <div class="row">
+          <div class="row botton">
             <div class="col-sm-12 gap">
               <cateter/>
             </div>
@@ -215,7 +244,8 @@ export default {
     box-shadow: 4px 3px 20px 2px rgba(40, 42, 42, 0.36);
     transition: all .3s cubic-bezier(.65,.05,.36,1);
     background-color: #ff5d5d !important;
-    border-color: #ff5d5d !important;;
+    border-color: #ff5d5d !important;
+    border-radius: 20px;
   }
 
 </style>
