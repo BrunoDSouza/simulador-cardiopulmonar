@@ -12,7 +12,7 @@ export default {
 
 <template>
   <div>
-    <div class="col-sm-4 gap" v-for="item in paciente.dados">
+    <div class="col-sm-6 gap" v-for="item in paciente.dados">
       <fieldset>
         <legend class="legend">{{ item.name }}</legend>
         <ul class="list-group box-list">

@@ -1,6 +1,8 @@
 @import "normalize.css";
 @import "acordion.css";
 @import "badges.css";
+@import "flex-list.css";
+
 /*
 Estilo padrão para os demais componentes
 */
@@ -13,9 +15,9 @@ label {
 }
 .well:hover {
     box-shadow: 4px 3px 20px 2px rgba(40, 42, 42, 0.36);
-		transition: all .3s cubic-bezier(.65,.05,.36,1);
-		border-color: #51b8bd;
-		border-radius: 10px;
+	transition: all .3s cubic-bezier(.65,.05,.36,1);
+	border-color: #51b8bd;
+	border-radius: 10px;
 }
 
 .list-group-item:first-child {
@@ -67,9 +69,9 @@ label {
 
 .box-header{
 	padding-bottom: 10px;
-  padding-left: 11px;
-  font-weight: bold;
-  font-size: 18px;
+	padding-left: 11px;
+	font-weight: bold;
+	font-size: 18px;
 }
 .box-single,
 .box-list {

@@ -2,7 +2,6 @@
 import { mapActions } from 'vuex'
 import Highcharts from 'highcharts'
 import Dark from './themes/dark'
-// import _ from 'lodash'
 import base from './abstractChart'
 export default {
   extends: base,
@@ -42,7 +41,7 @@ export default {
         },
         yAxis: {
           title: {
-            text: 'bpm',
+            text: 'rpm',
             style: {
               color: '#fff'
             }
@@ -72,7 +71,7 @@ export default {
         exporting: { enabled: false },
         credits: { enabled: false },
         series: [{
-          name: 'FC',
+          name: 'FR',
           marker: { enabled: false },
           data: (function () {
             var data = []

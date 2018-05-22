@@ -1,0 +1,5 @@
+export const _conection = 'socket/setConection'
+export const _subscribe = 'socket/setSubscribe'
+export const _send = 'socket/send'
+export const _error = 'socket/onError'
+export const _onmessage = 'socket/onMessage'

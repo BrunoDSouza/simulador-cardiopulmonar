@@ -25,7 +25,7 @@ export default {
                 let x = new Date().getTime()
                 let y = Math.random() * (90 - 88 + 1) + 88
                 fc.addPoint([x, y], true, true)
-              }, 530)
+              }, 1000)
             }
           }
         },
@@ -67,7 +67,7 @@ export default {
         credits: { enabled: false },
         series: [{
           name: 'FC',
-          marker: { enabled: false },
+          marker: { enabled: true },
           data: (function () {
             var data = []
             let i

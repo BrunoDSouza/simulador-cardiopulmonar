@@ -1,12 +1,13 @@
 import Vue from 'vue'
-import { VTooltip } from 'v-tooltip'
 import router from '@/router'
 import App from '@/app/Main'
 import store from '@/vuex'
-import loader from '@/plugins/loader'
+import { VTooltip } from 'v-tooltip'
+import ToggleButton from 'vue-js-toggle-button'
 
-Vue.use(loader, store)
 Vue.directive('tooltip', VTooltip)
+
+Vue.use(ToggleButton, store)
 
  /* eslint-disable no-new */
 new Vue({

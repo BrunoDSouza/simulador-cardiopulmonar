@@ -13,10 +13,19 @@ export default {
   [mutations.setGasometria] (state, gasometria) {
     state.gasometria = gasometria
   },
-  [mutations.setParametros] (state, parametros) {
-    state.parametros = parametros
+  [mutations.setSimetria] (state, simetria) {
+    state.simetria = simetria
   },
   [mutations.setVentilador] (state, ventilador) {
-    state.ventilador = ventilador
+    state.procedimentos.ventilador = ventilador
+  },
+  [mutations.setCateter] (state, cateter) {
+    state.procedimentos.cateter = cateter
+  },
+  [mutations.setProcedimentos] (state, procedimentos) {
+    state.procedimentos = procedimentos
+  },
+  [mutations.setProcedimentosConfig] (state, value) {
+    state.procedimentos.config.value = value
   }
 }

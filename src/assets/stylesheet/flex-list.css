@@ -1,0 +1,17 @@
+/* Estilização para list de divs com heigh uniform */
+
+.list-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+.list-item {
+	display: flex; 
+	padding: 0.5em;
+}
+
+.list-content {
+	display: flex;
+	flex-direction: column;
+	padding: 2em;
+	width: 100%;
+}

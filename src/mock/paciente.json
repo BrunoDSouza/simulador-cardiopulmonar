@@ -1,7 +1,7 @@
 {
   "dados": [
     {
-      "name": "Dados gerais",
+      "name": "Dados Gerais",
       "data": [
         { "param": "Idade", "value": 22, "description": null },
         { "param": "Peso(kg)", "value": 77, "description": null },
@@ -16,14 +16,6 @@
         { "param": "Cst (ml/cmH2O)", "value": 140, "description": "Complacência pulmonar: É uma propriedade fisica do tecido pulmonar e corresponde a capacidade pulmonar total em litros a uma dada pressão alveolar" },
         { "param": "VD/VT", "value": 0.30, "description": "Espaço morto: Proporção entre a ventilação do espaço morto e o volume corrente" },
         { "param": "Shunt (%)", "value": 1, "description": "Efeito Shunt: Ocorre quando uma porção do sangue venoso adentra a circulação arterial sem haver se submetido a troca gasosa na circulação pulmonar" }
-      ]
-    },
-    {
-      "name": "Esforço Muscular",
-      "data": [
-        { "param": "Pmus (cmH2O)", "value": 7, "description": "Intensidade do esforço: Estimativa da pressão gerada na cavidade pleural pela contração do diafragma" },
-        { "param": "f (rpm)", "value": 14, "description": "Frequência respiratória: Variação para adultos de 16 a 20 irpm" },
-        { "param": "Duração (s)", "value": 1, "description": null }
       ]
     }
   ]

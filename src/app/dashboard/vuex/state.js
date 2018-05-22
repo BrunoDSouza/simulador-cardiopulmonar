@@ -3,6 +3,8 @@ export default {
   filter: '',
   paciente: {},
   gasometria: {},
-  parametros: {},
-  ventilador: {}
+  simetria: {},
+  ventilador: {},
+  procedimentos: {},
+  cateter: {}
 }

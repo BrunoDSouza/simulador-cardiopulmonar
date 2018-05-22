@@ -1,0 +1,75 @@
+{
+	"dados" : [
+		{
+			"name" : "Adrenalina (ml)",
+			"value" : 0.4,
+			"description": "De 0.3 a 0.5 ml para adultos e 0.o1 ml/kg ( 10µg/kg ) para crianças"
+		},
+		{
+			"name" : "Atropina (mg/ml)",
+			"value" : 0.50,
+			"description": "A Atropina é um antídoto que pode ser indicada para combater arritmias cardíacas"
+		},
+		{
+			"name" : "KCL (mg)",
+			"value" : 5,
+			"description": "Cloreto de Potássio (KCL), é um medicamento utilizado no tratamento das doenças causadas pela falta de potássio no sangue, é também usado para prevenir e tratar coágulos sanguíneos associados a doenças cardíacas."
+		},
+		{
+			"name" : "Antibiótico (mg)",
+			"value" : 5,
+			"description": null
+		},
+		{
+			"name" : "Solução fisiológica (%)",
+			"value" : 0.9,
+			"description": "Solução salina esterilizada utilizada para fazer perfusões intravenosas em casos de diminuição de líquidos ou sal no organismo."
+		},
+		{
+			"name" : "Cloridrato de Verapamil (mg)",
+			"value" : 80,
+			"description": null
+		},
+		{
+			"name" : "Amiodarona (mg)",
+			"value" : 80,
+			"description": null
+		},
+		{
+			"name" : "Adenosina (mg)",
+			"value" : 6,
+			"description": "É um antiarrítmico, diminui a formação de impulsos no nodo sinoatrial (SA); diminui o tempo de condução no nodo AV (átrio-ventricular)"
+		},
+		{
+			"name" : "Cloridrato de Dopamina (ml)",
+			"value" : 5,
+			"description": "Indicado em caso de choque circulatório (como no choque séptico, choque cardiogênico e no infarto agudo do miocárdio, choque anafilático)"
+		}
+
+	],
+
+	"config": {
+		"name" : "Oxigenoterapia",
+		"value" : false,
+		"description": "Metodo terapêutico para a recuperação respiratória"
+	},
+	"cateter": {
+		"description": "Cateter nasal de O²",
+		"value": 0
+	},
+	"ventilador": {
+	  "dados": [
+	      { "param": "Volume (ml)", "value": 500, "description": null },
+	      { "param": "f (rpm)", "value": 14, "description": null },
+	      { "param": "Fluxo (l/min)", "value": 60, "description": null },
+	      { "param": "T. Insp. (s)", "value": 0.50, "description": null },
+	      { "param": "PEEP (cmH2O)", "value": 5, "description": null },
+	      { "param": "FIO2 (%)", "value": 21, "description": null },
+	      { "param": "Pausa Insp. (s)", "value": 0, "description": null },
+	      { "param": "Pausa Exp. (s)", "value": 0, "description": null },
+	      { "param": "Sensibilidade", "value": 2, "description": null }
+	  ]
+	}
+
+	
+}

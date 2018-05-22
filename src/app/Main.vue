@@ -1,5 +1,6 @@
 <script>
 import HeaderComponent from '@/components/root/header/main'
+
 export default {
   name: 'app',
   components: { HeaderComponent }
@@ -8,7 +9,6 @@ export default {
 
 <template>
   <div id="app">
-    <PageLoader/>
     <HeaderComponent/>
     <router-view class="page-header"/>
   </div>
@@ -23,4 +23,13 @@ export default {
   body{
     background-color: #f1f1f1;
   }
+
+  input[type='number']::-webkit-inner-spin-button, 
+  input[type='number']::-webkit-outer-spin-button { 
+      opacity: 1;
+  }
+  input[type='number']{
+    width: 60px;
+  }
+
 </style>
