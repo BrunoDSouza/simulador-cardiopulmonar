@@ -12,7 +12,7 @@ export default {
   },
   components: { vueSlider },
   mounted () {
-    console.log(this.isEnabledTerapia)
+    console.log(this.enabled)
   }
 }
 </script>
@@ -21,8 +21,15 @@ export default {
   <div>
     <fieldset>
       <legend class="legend">{{ cateter.description }}</legend>
-      <vue-slider class="box-list" v-model="cateter.value" :lazy="true" :interval="5" :max="100" :dotSize="20"
-      :piecewise="true" :tooltip="'hover'" :disabled="!enabled.value" :formatter="'{value}(L/min)'"/>
+      <vue-slider class="box-list" v-model="cateter.value" 
+        :lazy="true" 
+        :interval="5" 
+        :max="100" 
+        :dotSize="20"
+        :piecewise="true" 
+        :tooltip="'hover'" 
+        :disabled="!enabled.value" 
+        :formatter="'{value}(L/min)'"/>
     </fieldset>
   </div>
 </template>

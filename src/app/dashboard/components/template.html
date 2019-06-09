@@ -1,0 +1,76 @@
+<div class="container-fluid root">
+    <div id="container-decisao">
+      <button class="btn btn-info btn-confirm" v-if="enabledButton" @click="confirmAction">Confirmar alterações</button>
+    </div>
+    <div class="row list-flex">
+      <div class="col-sm-4 gap-right list-item">
+          <div class="well list-content">
+            <div class="row">
+              <div class="box-header">Procedimentos</div>
+              <procedimento/>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-4 gap list-item">
+          <div class="well list-content">
+            <div class="row">
+              <div class="box-header">Paciente</div>
+              <paciente/>
+            </div>
+            <div class="row">
+                <simetria/>
+            </div>
+          </div>
+      </div>
+      <div class="col-sm-4 gap-left list-item">
+        <div class="well list-content">
+          <div class="row">
+            <div class="box-header">Ventilação</div>
+            <div class="col-sm-12 gap">
+              <oximetria/>
+            </div>
+          </div>
+          <div class="row botton">
+            <div class="col-sm-12 gap">
+              <cateter/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row list-flex">
+      <div class="col-sm-6 gap-right list-item">
+        <div class="well list-content">
+          <div class="row">
+            <div class="box-header">Monitores</div>
+            <monitorFC/>
+            <monitorFR/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 gap list-item">
+        <div class="well list-content">
+          <div class="row">
+            <div class="box-header">Gasometria</div>
+            <gasometria/>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3 gap-left list-item">
+        <div class="well list-content">
+          <div class="row">
+            <div class="box-header">Ventilador</div>
+            <div class="col-sm-12">
+              <ventilador/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <audio autoplay loop preload="auto" style=" width:300px;">
+      <source src="static/songs/beat-cardio.mp3" type="audio/mpeg">
+    </audio>
+    <audio autoplay loop preload="auto" style=" width:300px;">
+      <source src="static/songs/heartbeat.mp3" type="audio/mpeg">
+    </audio>
+  </div>

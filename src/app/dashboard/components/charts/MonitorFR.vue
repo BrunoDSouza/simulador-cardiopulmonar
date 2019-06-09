@@ -8,11 +8,6 @@ export default {
   methods: {
     ...mapActions(['setDados']),
     dataSource () {
-      // this.chart === null ? (
-      //   this.chart = this.setUp({ categories, values })
-      // ) : (
-      //   this.chart.series[0].setData(values)
-      // )
       this.setUp()
     },
     setUp () {

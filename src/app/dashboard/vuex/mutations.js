@@ -4,9 +4,6 @@ export default {
   [mutations.setList] (state, list) {
     state.list = list
   },
-  [mutations.setFilter] (state, filter) {
-    state.filter = filter
-  },
   [mutations.setPaciente] (state, paciente) {
     state.paciente = paciente
   },

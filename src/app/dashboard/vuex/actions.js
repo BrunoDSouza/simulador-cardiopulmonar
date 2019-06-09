@@ -6,8 +6,4 @@ export const setPaciente = (context) => context.commit(mutations.setPaciente, ge
 export const setGasometria = (context) => context.commit(mutations.setGasometria, getGasometria())
 export const setSimetria = (context) => context.commit(mutations.setSimetria, getSimetria())
 export const setProcedimentos = (context) => context.commit(mutations.setProcedimentos, getProcedimentos())
-export const setFilter = (context, payload) => context.commit(mutations.setFilter, payload)
-
-export const changeConfig = (context, payload) => {
-  return context.commit(mutations.setProcedimentosConfig, payload)
-}
+export const changeConfig = (context, payload) => context.commit(mutations.setProcedimentosConfig, payload)

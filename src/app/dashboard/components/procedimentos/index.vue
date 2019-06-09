@@ -37,7 +37,7 @@ export default {
         </span>
         
       </li>
-      <li class="list-group-item" v-for="item in procedimentos.dados">
+      <li class="list-group-item" v-for="(item, index) in procedimentos.dados" v-bind:key="index">
         <span v-tooltip="item.description">{{ item.name }}</span>
         <span style="float: right;">
           <input type="number" style="text-align: center;" v-model.number="item.value" step="0.1" inputmode="numeric" pattern="[0-9]*">  
