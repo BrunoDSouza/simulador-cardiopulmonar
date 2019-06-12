@@ -29,7 +29,7 @@ export default {
       opacity: 1;
   }
   input[type='number']{
-    width: 60px;
+    width: 50px;
   }
 
 </style>

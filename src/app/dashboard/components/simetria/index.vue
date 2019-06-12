@@ -1,11 +1,19 @@
 <script>
-import { mapState } from 'vuex'
+import { getClassByValue } from '../../services'
+import { mapGetters } from 'vuex'
 
 export default {
   computed: {
-    ...mapState({
-      simetria: state => state.dashboard.simetria
+    ...mapGetters({
+      simetria: 'getSimetria',
+      colors: 'getColors'
     })
+  },
+  props: ['enableEdit'],
+  methods: {
+    getNameClass (item) {
+      return getClassByValue(item.value, item.min, item.max, item.normal, this.colors)
+    }
   }
 }
 </script>
@@ -18,7 +26,12 @@ export default {
           <ul class="list-group box-list">
             <li class="list-group-item" v-for="(item_list, internalIndex) in item.data" v-bind:key="internalIndex">
               <span v-tooltip="item_list.description">{{ item_list.param }}</span>
-              <span class="badge">{{ item_list.value }}</span>
+              <span v-if="!enableEdit" class="badge" :class="getNameClass(item_list)">{{ item_list.value }}</span>
+              <span v-if="enableEdit" style="float: right;">
+                <input v-if="item_list.enable" type="number" style="text-align: center;" v-model.number="item_list.value" 
+                  step="0.1" inputmode="numeric" pattern="[0-9]*"> 
+                <span v-if="!item_list.enable" class="badge">{{ item_list.value }}</span>
+              </span>
             </li>
           </ul>
         </fieldset>  

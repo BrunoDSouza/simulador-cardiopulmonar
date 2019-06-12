@@ -1,14 +1,15 @@
-import data from '@/mock/data.json'
 import paciente from '@/mock/paciente.json'
 import gasometria from '@/mock/gasometria.json'
 import simetria from '@/mock/simetria.json'
 import procedimentos from '@/mock/procedimento.json'
+import ventilador from '@/mock/ventilador.json'
 
-export const getDados = () => data
+export const getDados = () => {}
 export const getPaciente = () => paciente
 export const getGasometria = () => gasometria
 export const getSimetria = () => simetria
 export const getProcedimentos = () => procedimentos
+export const getVentilador = () => ventilador
 
 export const uniformHeight = (collection, selector) => {
   collection.forEach((item) => {
@@ -30,6 +31,16 @@ const getMaxHeight = (collection) => {
     maxHeight = Math.max(maxHeight, item.offsetHeight)
   })
   return maxHeight
+}
+
+export const getClassByValue = (value, min, max, normal, colors) => {
+  if (!min || !max || !normal) return colors.secondary
+
+  let diff = value - normal
+  if ((diff > 0 && diff < 1) || (diff < 0 && diff > -1)) return colors.success
+  if ((value > min) && (value < max)) return colors.info
+  if ((value === min) || (value === max)) return colors.warning
+  if ((value < min) || (value > max)) return colors.danger
 }
 
 export const convertToObject = (value) => JSON.parse(JSON.stringify(value))

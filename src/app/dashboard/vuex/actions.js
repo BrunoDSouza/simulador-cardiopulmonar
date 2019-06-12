@@ -1,9 +1,10 @@
 import * as mutations from './mutations_types'
-import { getDados, getPaciente, getGasometria, getSimetria, getProcedimentos } from '../services'
+import { getPaciente, getGasometria, getSimetria, getProcedimentos, getVentilador } from '../services'
 
-export const setDados = (context) => context.commit(mutations.setList, getDados())
-export const setPaciente = (context) => context.commit(mutations.setPaciente, getPaciente())
-export const setGasometria = (context) => context.commit(mutations.setGasometria, getGasometria())
-export const setSimetria = (context) => context.commit(mutations.setSimetria, getSimetria())
-export const setProcedimentos = (context) => context.commit(mutations.setProcedimentos, getProcedimentos())
+export const setPaciente = (context, payload) => context.commit(mutations.setPaciente, payload || getPaciente())
+export const setGasometria = (context, payload) => context.commit(mutations.setGasometria, payload || getGasometria())
+export const setSimetria = (context, payload) => context.commit(mutations.setSimetria, payload || getSimetria())
+export const setProcedimentos = (context, payload) => context.commit(mutations.setProcedimentos, payload || getProcedimentos())
 export const changeConfig = (context, payload) => context.commit(mutations.setProcedimentosConfig, payload)
+export const setTypeDashboard = (context, payload) => context.commit(mutations.setTypeDashboard, payload)
+export const setVentilador = (context, payload) => context.commit(mutations.setVentilador, payload || getVentilador)

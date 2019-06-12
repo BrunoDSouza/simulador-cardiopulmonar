@@ -1,9 +1,6 @@
 import * as mutations from './mutations_types'
 
 export default {
-  [mutations.setList] (state, list) {
-    state.list = list
-  },
   [mutations.setPaciente] (state, paciente) {
     state.paciente = paciente
   },
@@ -24,5 +21,8 @@ export default {
   },
   [mutations.setProcedimentosConfig] (state, value) {
     state.procedimentos.config.value = value
+  },
+  [mutations.setTypeDashboard] (state, value) {
+    state.typeDashboard = value
   }
 }

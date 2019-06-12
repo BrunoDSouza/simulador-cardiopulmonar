@@ -17,7 +17,7 @@ export default {
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <router-link to="/" class="navbar-brand">
+    <router-link :to="{ name: 'dashboard', params: { id: 1 } }" class="navbar-brand">
       Simulador Cardiopulmonar
     </router-link>
   </div>

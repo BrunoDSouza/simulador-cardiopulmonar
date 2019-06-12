@@ -2,15 +2,30 @@
 import Highcharts from 'highcharts'
 import Highchartsmore from 'highcharts/highcharts-more'
 import solidGauge from 'highcharts/modules/solid-gauge'
-import base from './abstractChart'
+import { mapGetters } from 'vuex'
 
 export default {
-  extends: base,
+  data () {
+    return {
+      chart: null
+    }
+  },
+  mounted () {
+    this.dataSource()
+  },
+  computed: {
+    ...mapGetters({
+      spo2: 'getSpO2'
+    })
+  },
   methods: {
-    dataSource () {
-      this.setUp()
+    dataSource (value) {
+      !this.chart ? this.chart = this.setUp(value) : this.update(value)
     },
-    setUp () {
+    update (value) {
+      this.chart.series[0].points[0].update(value)
+    },
+    setUp (value) {
       Highchartsmore(Highcharts)
       solidGauge(Highcharts)
       var gaugeOptions = {
@@ -65,7 +80,7 @@ export default {
       }
       // The speed gauge
       // Highcharts.setOptions(Dark)
-      var chartSpeed = Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
+      return Highcharts.chart('container-speed', Highcharts.merge(gaugeOptions, {
         yAxis: {
           min: 0,
           max: 100
@@ -73,7 +88,7 @@ export default {
         credits: { enabled: false },
         series: [{
           name: 'Nivel',
-          data: [80],
+          data: [value || 80],
           dataLabels: {
             format: '<div style="text-align:center"><span style="font-size:20px;color:' +
             ((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y}%</span><br/>' +
@@ -84,16 +99,22 @@ export default {
       }))
 
       // Bring life to the dials
-      setInterval(function () {
-        var point, newVal, inc
-        if (chartSpeed) {
-          point = chartSpeed.series[0].points[0]
-          inc = Math.round((Math.random() - 0.5) * 100)
-          newVal = point.y + inc
-          if (newVal < 0 || newVal > 100) newVal = point.y - inc
-          point.update(newVal)
-        }
-      }, 4000)
+      // setInterval(function () {
+      //   var point //, newVal, inc
+      //   if (chartSpeed) {
+      //     debugger
+      //     point = chartSpeed.series[0].points[0]
+      //     // inc = Math.round((Math.random() - 0.5) * 100)
+      //     // newVal = point.y + inc
+      //     // if (newVal < 0 || newVal > 100) newVal = point.y - inc
+      //     point.update(this.value)
+      //   }
+      // }, 5000)
+    }
+  },
+  watch: {
+    spo2: function (newValue, oldValue) {
+      this.dataSource(newValue.value)
     }
   }
 }
@@ -103,7 +124,7 @@ export default {
   <div>
     <fieldset>
       <legend class="legend">Oximetria</legend>
-      <div id="container-speed" class="box-list" style="width: auto; height: 150px;"></div>
+      <div id="container-speed"  class="box-list" style="width: auto; height: 150px;"></div>
     </fieldset>
   </div>
 </template>

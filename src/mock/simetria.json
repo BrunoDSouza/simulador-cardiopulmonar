@@ -3,17 +3,17 @@
     {
       "name": "Sincronia",
       "data": [
-        { "param": "T. Insp (s)", "value": 0.50, "description": null },
-        { "param": "T. Exp (s)", "value": 3.79, "description": null },
-        { "param": "I:E", "value": "1 : 7.57", "description": null }
+        { "param": "T. Insp (s)", "value": 0.50, "min": 0.2, "max": 1.2, "normal": 0.5, "enable": true, "description": null },
+        { "param": "T. Exp (s)", "value": 3.79, "min": 3, "max": 7, "normal": 5, "enable": true, "description": null },
+        { "param": "I:E", "value": "1 : 7.57", "min": 3, "max": 7, "normal": 5, "enable": true, "description": null }
       ]
     },
     {
       "name": "Esforço Muscular",
       "data": [
-        { "param": "Pmus (cmH2O)", "value": 7, "description": "Intensidade do esforço: Estimativa da pressão gerada na cavidade pleural pela contração do diafragma" },
-        { "param": "f (rpm)", "value": 14, "description": "Frequência respiratória: Variação para adultos de 14 a 18 rpm" },
-        { "param": "f (bpm)", "value": 14, "description": "Frequência cardíaca: Variação para adultos de 40 a 60 bpm" }
+        { "param": "Pmus (cmH2O)", "value": 7, "min": 3, "max": 9, "normal": 75, "enable": true, "description": "Intensidade do esforço: Estimativa da pressão gerada na cavidade pleural pela contração do diafragma" },
+        { "param": "f (rpm)", "value": 14, "min": 12, "max": 25, "normal": 14, "enable": true, "description": "Frequência respiratória: Variação para adultos de 14 a 18 rpm" },
+        { "param": "f (bpm)", "value": 14, "min": 11, "max": 28, "normal": 14, "enable": true, "description": "Frequência cardíaca: Variação para adultos de 40 a 60 bpm" }
       ]
     }
   ]

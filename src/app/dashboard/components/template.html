@@ -1,9 +1,10 @@
 <div class="container-fluid root">
     <div id="container-decisao">
       <button class="btn btn-info btn-confirm" v-if="enabledButton" @click="confirmAction">Confirmar alterações</button>
+      <button class="btn btn-info btn-confirm" v-if="enabledEditParametros" @click="confirmActionEdit">Confirmar edições</button>
     </div>
     <div class="row list-flex">
-      <div class="col-sm-4 gap-right list-item">
+      <div v-if="!typeDashboardOn" class="col-sm-4 gap-right list-item">
           <div class="well list-content">
             <div class="row">
               <div class="box-header">Procedimentos</div>
@@ -15,14 +16,14 @@
           <div class="well list-content">
             <div class="row">
               <div class="box-header">Paciente</div>
-              <paciente/>
+              <paciente :enableEdit="typeDashboardOn"/>
             </div>
             <div class="row">
-                <simetria/>
+                <simetria :enableEdit="typeDashboardOn"/>
             </div>
           </div>
       </div>
-      <div class="col-sm-4 gap-left list-item">
+      <div v-if="!typeDashboardOn" class="col-sm-4 gap-left list-item">
         <div class="well list-content">
           <div class="row">
             <div class="box-header">Ventilação</div>
@@ -37,8 +38,25 @@
           </div>
         </div>
       </div>
+      <div v-if="typeDashboardOn" class="col-sm-3 gap list-item">
+        <div class="well list-content">
+          <div class="row">
+            <div class="box-header">Gasometria</div>
+            <gasometria :enableEdit="typeDashboardOn"/>
+          </div>
+        </div>
+      </div>
+      <div v-if="typeDashboardOn" class="col-sm-5 gap-left list-item">
+        <div class="well list-content">
+          <div class="row">
+            <div class="box-header">Monitores</div>
+            <monitorFC/>
+            <monitorFR/>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row list-flex">
+    <div v-if="!typeDashboardOn" class="row list-flex">
       <div class="col-sm-6 gap-right list-item">
         <div class="well list-content">
           <div class="row">

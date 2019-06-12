@@ -3,19 +3,18 @@
     {
       "name": "Dados Gerais",
       "data": [
-        { "param": "Idade", "value": 22, "description": null },
-        { "param": "Peso(kg)", "value": 77, "description": null },
-        { "param": "Altura(m)", "value": 1.70, "description": null },
-        { "param": "IMC", "value": 22.5, "description": "Indice de massa corporal, obtido atraves da soma do (peso + altura) vezes a altura" }
+        { "param": "Idade", "value": 22, "enable": false, "description": null },
+        { "param": "Peso(kg)", "value": 77, "enable": true, "description": null },
+        { "param": "Altura(m)", "value": 1.70, "enable": true, "description": null }
       ]
     },
     {
       "name": "Fisiologia Pulmonar",
       "data": [
-        { "param": "Rva (cmH2O/l/s)", "value": 2, "description": "Resitencia nas vias aéreas: É uma propriedade fisica que mede opsição ao fluxo de ar nas zonas condutoras da árvore brônquica" },
-        { "param": "Cst (ml/cmH2O)", "value": 140, "description": "Complacência pulmonar: É uma propriedade fisica do tecido pulmonar e corresponde a capacidade pulmonar total em litros a uma dada pressão alveolar" },
-        { "param": "VD/VT", "value": 0.30, "description": "Espaço morto: Proporção entre a ventilação do espaço morto e o volume corrente" },
-        { "param": "Shunt (%)", "value": 1, "description": "Efeito Shunt: Ocorre quando uma porção do sangue venoso adentra a circulação arterial sem haver se submetido a troca gasosa na circulação pulmonar" }
+        { "param": "Rva (cmH2O/l/s)", "value": 2, "min": 2, "max": 7, "normal": 5, "enable": true, "description": "Resitencia nas vias aéreas: É uma propriedade fisica que mede opsição ao fluxo de ar nas zonas condutoras da árvore brônquica" },
+        { "param": "Cst (ml/cmH2O)", "value": 140, "min": 120, "max": 142, "normal": 132, "enable": true, "description": "Complacência pulmonar: É uma propriedade fisica do tecido pulmonar e corresponde a capacidade pulmonar total em litros a uma dada pressão alveolar" },
+        { "param": "VD/VT", "value": 0.30, "min": 0.21, "max": 1, "normal": 0.28, "enable": true, "description": "Espaço morto: Proporção entre a ventilação do espaço morto e o volume corrente" },
+        { "param": "Shunt (%)", "value": 1, "min": 0.3, "max": 1, "normal": 0.5, "enable": true, "description": "Efeito Shunt: Ocorre quando uma porção do sangue venoso adentra a circulação arterial sem haver se submetido a troca gasosa na circulação pulmonar" }
       ]
     }
   ]
